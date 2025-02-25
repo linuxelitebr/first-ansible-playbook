@@ -1,0 +1,22 @@
+- name: Deploy Apache in a Podman Container
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Install Podman
+      package:
+        name: podman
+        state: present
+
+    - name: Create an Apache container
+      containers.podman.podman_container:
+        name: apache_container
+        image: docker.io/httpd:alpine
+        state: started
+        recreate: yes
+        restart_policy: always
+        detach: true
+        ports:
+          - "8080:80"
+
+    - name: Copy index.html to the container
+      command: podman cp index.html apache_container:/usr/local/apache2/htdocs/index.html
