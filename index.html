@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Ansible Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://raw.githubusercontent.com/ansible/logos/refs/heads/main/community-logo/Ansible-Community-Logo-RGB-Black.png" alt="Ansible Logo">
+
+    <h1>Hello World! This is my first Ansible Playbook!</h1>
+
+    <div class="info">
+        <p><strong>Current Date and Time:</strong> <span id="datetime">Loading...</span></p>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            var currentDate = new Date();
+            var dateStr = currentDate.toLocaleString();
+            document.getElementById('datetime').innerText = dateStr;
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
